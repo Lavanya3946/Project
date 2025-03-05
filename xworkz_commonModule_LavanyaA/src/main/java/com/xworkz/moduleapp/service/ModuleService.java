@@ -6,4 +6,6 @@ import org.springframework.ui.Model;
 public interface ModuleService {
 
     String signUpValidateAndSave(ModuleDto moduleDto, Model model);
+
+    String getSignIn(String email, String password, Model model);
 }

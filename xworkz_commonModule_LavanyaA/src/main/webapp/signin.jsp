@@ -12,46 +12,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      body {
-                 background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxIhYuGvGgPIJ7vzgz8ptYNPCreSvd4gJfZQ&s') no-repeat center center fixed;
-                 background-size: cover;
-                 font-family: 'Montserrat', sans-serif;
-                 color: black;
-                 height: 100vh;
-                overflow:auto;
-             }
-             .container {
-                 margin-top: 1rem;
-                 max-width: 900px;
-                 height: 600px;
-                 background: rgba(255, 255, 255, 0.8);
-                 padding: 2rem;
-                 border-radius: 10px;
-                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-             }
-             h1 {
-                 margin-bottom: 2rem;
-                 color: #007bff;
-                 text-shadow: 2px 2px 4px #000;
-                 text-align: center;
-             }
-             .form-container {
-                 background: violet;
-                 padding: 2rem;
-
-                 border-radius: 10px;
-                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-             }
-             .btn-custom {
-                 margin: 0.5rem 10;
-                 padding: 0.75rem 1.5rem;
-                 background-color: #17a2b8;
-                 border: none;
-                 color: white;
-                 width: 30%;
-                 transition: background-color 0.3s;
-             }
-
+        body {
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxIhYuGvGgPIJ7vzgz8ptYNPCreSvd4gJfZQ&s') ;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+            color: black;
+        }
+        .container {
+            margin-top: 5rem;
+            max-width: 500px;
+        }
+        h1 {
+            margin-bottom: 2rem;
+            color: #007bff;
+            text-shadow: 2px 2px 4px #000;
+            text-align: center;
+        }
+        .card {
+            background: violet;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn-custom {
+            margin: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #17a2b8;
+            border: none;
+            color: white;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background-color: green;
+        }
         .form-control:focus {
             border-color: #007bff;
             box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
@@ -92,92 +85,33 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.jsp">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="signin.jsp">SignIn</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="container mt-5">
+            <h1>Sign In Form</h1>
+            <div class="card">
+             <form action="userSignIn" method="post">
 
-
-
-   <div class="container">
-           <h1>Sign Up Form</h1>
-           <div class="form-container">
-               <form action="userSignUp" method="post">
-                   <div class="row">
-                       <div class="col-md-6 mb-3">
-                           <label for="fullName" class="form-label">Full Name:</label>
-                           <input type="text" class="form-control" id="fullName" name="fullName" value="${moduleDto.fullName}" placeholder="Enter your full name">
-                           <span style="color: red;">${nameError}</span>
-                       </div>
-                       <div class="col-md-6 mb-3">
-                           <label for="email" class="form-label">Email:</label>
-                           <input type="email" class="form-control" id="email" name="email" value="${moduleDto.email}" placeholder="Enter your email">
-                           <span style="color: red;">${emailError}</span>
-                       </div>
+              <div class="mb-3">
+                 <label for="email" class="form-label">Email:</label>
+                   <input type="email" class="form-control" id="email" name="email" value="${moduleDto.email}" placeholder="Enter your email" >
+                      <span style="color: red;">${emailError}</span>
                    </div>
 
-                   <div class="row">
-                       <div class="col-md-6 mb-3">
-                           <label for="age" class="form-label">Age:</label>
-                           <input type="number" class="form-control" id="age" name="age" value="${moduleDto.age}" placeholder="Enter your age">
-                           <span style="color:red;">${ageError}</span>
-                       </div>
-                       <div class="col-md-6 mb-3">
-                           <label for="gender">Gender:</label><br>
-                           <input type="radio" id="male" name="gender" value="Male">
-                           <label for="male">Male</label>
+                <div class="mb-3">
+                     <label for="password" class="form-label">Password:</label>
+                      <input type="password" class="form-control" id="password" name="password" value="${moduleDto.password}" placeholder="Enter your password" >
+                      <span style="color: red;">${error}</span>
+                  </div>
 
-                           <input type="radio" id="female" name="gender" value="Female">
-                           <label for="female">Female</label>
+       <button type="submit" class="btn btn-custom">SignIn</button>
+                  </form>
+              </div>
+          </div>
 
-                           <input type="radio" id="others" name="gender" value="Others">
-                           <label for="others">Others</label>
-                           <span style="color:red;">${genderError}</span>
-                       </div>
-                   </div>
-
-                   <div class="row">
-                       <div class="col-md-6 mb-3">
-                           <label for="location">Location:</label>
-                           <select id="location" name="location" class="form-control"  value="${moduleDto.location}"required>
-                               <option value="">--Select Location--</option>
-                               <option value="Bangalore">Bangalore</option>
-                               <option value="Mysore">Mysore</option>
-                               <option value="Tumkur">Tumkur</option>
-                               <option value="Hassan">Hassan</option>
-                               <option value="Mandya">Mandya</option>
-                           </select>
-                           <span style="color:red;">${locationError}</span>
-                       </div>
-                       <div class="col-md-6 mb-3">
-                           <label for="phoneNumber" class="form-label">Phone Number:</label>
-                           <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" value="${moduleDto.phoneNumber}" placeholder="Enter your phone number">
-                           <span style="color: red;">${phoneNumberError}</span>
-                       </div>
-                   </div>
-
-                   <div class="row">
-                       <div class="col-md-6 mb-3">
-                           <label for="password" class="form-label">Password:</label>
-                           <input type="password" class="form-control" id="password" name="password" value="${moduleDto.password}" placeholder="Enter your password">
-                           <span style="color: red;">${passwordError}</span>
-                       </div>
-                       <div class="col-md-6 mb-3">
-                           <label for="confirmPassword" class="form-label">Confirm Password:</label>
-                           <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" value="${moduleDto.confirmPassword}" placeholder="Confirm your password">
-                           <span style="color: red;">${confirmPasswordError}</span>
-                       </div>
-                   </div>
-
-                   <button type="submit" class="btn btn-custom">Submit</button>
-                    <button type="reset" class="btn btn-custom">Reset</button>
-               </form>
-           </div>
-       </div>
-
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-   </body>
-   </html>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      </body>
+      </html>

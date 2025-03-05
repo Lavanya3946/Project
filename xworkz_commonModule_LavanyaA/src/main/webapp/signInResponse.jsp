@@ -73,12 +73,11 @@
             </div>
         </div>
     </nav>
-<h2 style="text-align:center"> <span style="color: green;">Thank You ${name} </span></h2>
 
 <div class="container" style="display: flex; justify-content: center;">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBsB4TotT75b1ro18Rc5ZfMvI8gDeLX0c_vw&s" alt="Image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS44eQvO5mL9nHlPy3jWaZ5I4W5_MUfORQe5g&s" alt="Image">
 </div>
-    <h1 style="text-align:center"> <span style="color: red;"> SignUp Successful...! </span></h1>
+  <h2 style="text-align:center"> <span style="color: green;"> SignIn Success...!</span></h2>
 </span></h2>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

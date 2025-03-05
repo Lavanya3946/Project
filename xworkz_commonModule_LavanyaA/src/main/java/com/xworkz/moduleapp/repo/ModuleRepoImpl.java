@@ -3,10 +3,7 @@ package com.xworkz.moduleapp.repo;
 import com.xworkz.moduleapp.entity.ModuleEntity;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 
 @Repository
 public class ModuleRepoImpl implements ModuleRepo {
@@ -27,5 +24,23 @@ public class ModuleRepoImpl implements ModuleRepo {
             entityManager.getTransaction().rollback();
         }
         return false;
+    }
+
+
+
+    @Override
+    public ModuleEntity findByEmail(String email) {
+        try{
+           Query query= entityManager.createNamedQuery("getByEmail",ModuleEntity.class);
+            System.out.println("email"+ModuleEntity.class);
+           query.setParameter("email",email);
+           ModuleEntity moduleEntity=(ModuleEntity) query.getSingleResult();
+           return moduleEntity;
+
+        }catch (Exception e){
+            System.out.println("error: "+e.getMessage());
+            return null;
+        }
+
     }
 }
