@@ -110,20 +110,17 @@
                        <div class="col-md-6 mb-3">
                            <label for="fullName" class="form-label">Full Name:</label>
                            <input type="text" class="form-control" id="fullName" name="fullName" value="${moduleDto.fullName}" placeholder="Enter your full name">
-                           <span style="color: red;">${nameError}</span>
                        </div>
                        <div class="col-md-6 mb-3">
                            <label for="email" class="form-label">Email:</label>
                            <input type="email" class="form-control" id="email" name="email" value="${moduleDto.email}" placeholder="Enter your email">
-                           <span style="color: red;">${emailError}</span>
                        </div>
-                   </div>
+
 
                    <div class="row">
                        <div class="col-md-6 mb-3">
                            <label for="age" class="form-label">Age:</label>
                            <input type="number" class="form-control" id="age" name="age" value="${moduleDto.age}" placeholder="Enter your age">
-                           <span style="color:red;">${ageError}</span>
                        </div>
                        <div class="col-md-6 mb-3">
                            <label for="gender">Gender:</label><br>
@@ -135,14 +132,13 @@
 
                            <input type="radio" id="others" name="gender" value="Others">
                            <label for="others">Others</label>
-                           <span style="color:red;">${genderError}</span>
                        </div>
                    </div>
 
                    <div class="row">
                        <div class="col-md-6 mb-3">
                            <label for="location">Location:</label>
-                           <select id="location" name="location" class="form-control"  value="${moduleDto.location}"required>
+                           <select id="location" name="location" class="form-control"  value="${moduleDto.location}">
                                <option value="">--Select Location--</option>
                                <option value="Bangalore">Bangalore</option>
                                <option value="Mysore">Mysore</option>
@@ -150,12 +146,10 @@
                                <option value="Hassan">Hassan</option>
                                <option value="Mandya">Mandya</option>
                            </select>
-                           <span style="color:red;">${locationError}</span>
                        </div>
                        <div class="col-md-6 mb-3">
                            <label for="phoneNumber" class="form-label">Phone Number:</label>
                            <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" value="${moduleDto.phoneNumber}" placeholder="Enter your phone number">
-                           <span style="color: red;">${phoneNumberError}</span>
                        </div>
                    </div>
 
@@ -163,14 +157,13 @@
                        <div class="col-md-6 mb-3">
                            <label for="password" class="form-label">Password:</label>
                            <input type="password" class="form-control" id="password" name="password" value="${moduleDto.password}" placeholder="Enter your password">
-                           <span style="color: red;">${passwordError}</span>
                        </div>
                        <div class="col-md-6 mb-3">
                            <label for="confirmPassword" class="form-label">Confirm Password:</label>
                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" value="${moduleDto.confirmPassword}" placeholder="Confirm your password">
-                           <span style="color: red;">${confirmPasswordError}</span>
                        </div>
                    </div>
+                   <span>${inValid}</span>
 
                    <button type="submit" class="btn btn-custom">Submit</button>
                     <button type="reset" class="btn btn-custom">Reset</button>

@@ -6,4 +6,9 @@ public interface ModuleRepo {
     boolean signUpSave(ModuleEntity moduleEntity);
 
     ModuleEntity findByEmail(String email);
+
+    boolean updateUser(ModuleEntity moduleEntity);
+
+
+    void unlockUserAccount(String email);
 }

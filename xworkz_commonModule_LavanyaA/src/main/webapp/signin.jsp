@@ -68,6 +68,13 @@
             color: red;
             font-size: 0.9rem;
         }
+        .accountBlock{
+
+                    border-radius: 20px;
+                    padding: 10px;
+                    max-width: 600px;
+                    text-align: center;
+
     </style>
 </head>
 <body>
@@ -90,24 +97,30 @@
             </div>
         </div>
     </nav>
+      <h6 style=text-align:center><span style="color: black;">${msg}</span><br>
+                <span style="color: red;">${unlockTime}<span></h6>
+
+
+
+    <div class="container">
     <div class="container mt-5">
             <h1>Sign In Form</h1>
             <div class="card">
-             <form action="userSignIn" method="post">
+             <form action="userSignIn" method="get">
 
               <div class="mb-3">
                  <label for="email" class="form-label">Email:</label>
                    <input type="email" class="form-control" id="email" name="email" value="${moduleDto.email}" placeholder="Enter your email" >
-                      <span style="color: red;">${emailError}</span>
                    </div>
 
                 <div class="mb-3">
                      <label for="password" class="form-label">Password:</label>
                       <input type="password" class="form-control" id="password" name="password" value="${moduleDto.password}" placeholder="Enter your password" >
-                      <span style="color: red;">${error}</span>
                   </div>
+                      <span style="color: red;">${inValidData}</span>
 
-       <button type="submit" class="btn btn-custom">SignIn</button>
+                 <button type="submit" class="btn btn-custom"><a  href="fetchUsers?email=${user.email}"></a>SignIn</button>
+                            <a href="forgotPassword.jsp">forgotPassword</a>
                   </form>
               </div>
           </div>

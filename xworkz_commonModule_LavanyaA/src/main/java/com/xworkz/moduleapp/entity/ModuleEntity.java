@@ -4,11 +4,13 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "module")
+@Table(name = "users")
 @NamedQuery(name = "getByEmail",query = "select m from ModuleEntity m where m.email=:email")
+
 
 public class ModuleEntity {
     @Id
@@ -39,6 +41,14 @@ public class ModuleEntity {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "confirmPassword")
-    private String confirmPassword;
+    @Column(name = "failed_attempts")
+    private int failedAttempts = 0;  // Track failed login attempts
+
+    @Column(name = "account_locked")
+    private boolean accountLocked = false;
+
+    @Column(name = "lock_time")
+    private LocalDateTime lockTime;
+
+
 }

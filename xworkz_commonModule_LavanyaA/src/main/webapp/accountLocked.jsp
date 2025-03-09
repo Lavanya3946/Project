@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,20 +71,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="signin.jsp">SignIn</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="fetchUsers?email=${validData}">View Profile</a>
-                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
-              <h2 style="text-align:center"> <span style="color: black;">${validData} Thank you </span></h2>
-    <div class="container" style="display: flex; justify-content: center;">
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS44eQvO5mL9nHlPy3jWaZ5I4W5_MUfORQe5g&s" alt="Image">
-     </div>
 
-  <h2 style="text-align:center"> <span style="color: green;"> SignIn Success...!</span></h2>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container">
+        <h2>Account Locked</h2>
+        <div class="message">
+            Your account is locked due to multiple failed login attempts. Try again after:
+        </div>
+        <p>You can try again after: <span class="unlock-time"><c:out value="${unlockTime}" /></span> (in 24 hours)</p>
+        <a class="back-link" href="forgotPassword.jsp">Forgot Password</a>
+    </div>
 </body>
 </html>
